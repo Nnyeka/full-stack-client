@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,500&display=swap');
+
+:root {
+  --background: rgba(134, 111, 123, 0.1);
+  --lightblue: rgba(102, 153, 204, 0.80);
+  --strongblue: rgba(53, 107, 162);
+  --letters: rgba(255, 255, 255);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.App {
+  text-align: center;
+}
+
+/* Navbar styles*/
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: var(--gap, 1rem)
+}
+
+.logo {
+  margin-left: -5rem;
+}
+
+.primary-header {
+ background: var(--background);
+ width: 100%;
+ height: 5rem;
+ justify-content: space-around;
+}
+
+.primary-header h4 {
+  margin: 0;
+  color: var(--strongblue);
+}
+
+.primary-header a {
+  text-decoration:  none;
+  color: var(--strongblue);
+}
+
+.primary-navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+ 
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+/* 
+.primary-navigation li {
+  width: fit-content;
+  height: auto;
+} */
+
+.primary-navigation a {
+
+ margin-inline-end: .2em;
+ color: var(--lightblue);
+ font-size: 0.95rem;
+ text-transform: uppercase;
+}
+
+.primary-navigation a:hover {
+  color: var(--strongblue);
+ }
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+@media (max-width: 35em) {
+  .primary-navigation {
+    --gap: 1.7em;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 35%;
+    flex-direction: column;
+    padding: min(25vh, 10rem) 4em;
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(2rem);
+  }
+
+  .primary-navigation .active {
+    display: block;
+    transform: translateX(0%);
+   
+ 
+
+  }
+
+  .close {
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    background-color: transparent;
+    background-image: url('assets/icon-hamburger.svg');
+    background-repeat: no-repeat;
+    width: 2rem;
+    border: 0;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+
+
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url('assets/icon-close.svg')
+  }
+
+  .primary-header .primary-navigation .top {
+    margin-top: -1.35rem;
+  }
+  .primary-navigation a:hover {
+    color: var(--strongblue);
+   }
+  
+}
+
+
+/* @media (max-width: 35em) {
+  .primary-navigation {
+    --gap: 2em;
+    position: fixed;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2em;
+  }
+  
+
+} */
+
+
+
+
+
+.primary-navigation button.logout {
+  border: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--lightblue);
+  background: #ffffff09
+
+}
+
+
+
+/*login and registration*/
+
+.form {
+  background: var(--background);
+  max-width: 280px;
+  margin: 4rem auto;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: var(--background);
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: var(--lightblue);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 1.1rem;
+
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: var(--strongblue);
+}
+
+.form a {
+ font-size: 0.75rem; 
+ text-decoration: none;
+ color: #333333;
+}
+
+.form a span {
+  color: var(--strongblue);
+}
+
+.form .errors-target span {
+  font-size: 0.75rem;
+  color: red;
+}
+
+.form .errors-target button {
+  margin: 0.2rem 0 1rem;
+}
+
+.form .errors-target .signin {
+  color: var(--strongblue);
+}
+
+
+/*login and registration ends*/
+
+.create-sleep {
+  margin-top: 224px;
+}
+
+input[type="datetime-local"] {
+  /* position: absolute;
+  top: 50%;
+  left: 50%; */
+  padding: 14px;
+  background: var(--lightblue);
+  color: var(--letters);
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.button-sleep {
+  background: var(--lightblue);
+  color: var(--letters);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 1rem;
+  padding: .5em .8em;
+  text-align: center;
+}
+
+.sleep-table {
+  overflow-x: auto;
+}
+
+.homepage {
+  margin: 6rem auto;
+  color: var(--strongblue);
+  font-size: 2rem;
+}
+
+.homepage h1 {
+  margin: 0;
+}
+
+.homepage p {
+  margin-bottom: 2.7rem;
+}
+
+.homepage a.get-started {
+  background: var(--lightblue);
+  color: var(--letters);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.table-header th {
+  background: var(--lightblue);
+  color: #fff;
+}
+
+.main-profile h1 {
+  color: var(--strongblue);
+  font-size: 3rem;
+}
+
+.main-profile button {
+  background: var(--lightblue);
+  color: var(--letters);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0;
+  padding: 1.1em 2.5em;
+  text-align: center;
+}
+
+.sleepPage {
+  margin-top: 4rem;
+}
+
+
+
+.leftSide {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.leftSide div {
+  margin-bottom: 10px;
+}
+
+.sc-dmRaPn.gelpCx {
+  width: fit-content;
+}
+
+
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #bcbaad;
+  padding: 2px 5px;
+  color: #333333;
+  font-weight: 500;
+}
+
+
+
+.barchart {
+  width: 100%;
+   max-width: 400px;
+}
+
+.profilepage {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  grid-gap: 4rem;
+}
+
+
+
+.login {
+  margin-top: 3rem;
+}
+
+.sleeps {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media screen and (min-width: 559px) {
+  /* .primary-header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(500px, 1fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  } */
+
+
+
+
+  button.logout {
+    position: absolute;
+    right: 15px;
+    bottom: 2x;
+    top: 32.5px;
+    cursor: pointer;
+  }
+
+  button.logout:hover {
+    color: var(--strongblue);
+  }
+
+
+  .profilepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    grid-gap: 60px;
+    margin: 4rem 1rem;
+  }
+
+  .button-sleep {
+    margin: 0 1.3rem;
+  }
+
+  .barchart {
+      width: 100%;
+      max-width: 506px;
+  }
+
+
+}
