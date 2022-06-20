@@ -29,9 +29,9 @@ body {
   gap: var(--gap, 1rem)
 }
 
-.logo {
+/* .logo {
   margin-left: -5rem;
-}
+} */
 
 .primary-header {
  background: var(--background);
