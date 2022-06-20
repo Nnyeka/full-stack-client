@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
@@ -10,8 +10,6 @@ import AuthenticateConsumer from "../helpers/AuthContext";
 
 function Login() {
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const { register, handleSubmit, formState: {errors} } = useForm();
   // const {setAuthState} = useContext(AuthContext)
   const { login } = AuthenticateConsumer();
@@ -27,11 +25,11 @@ function Login() {
       } else {
 
         localStorage.setItem("accessToken", res.data.token);
-        console.log("login res data..", res.data)
+        // console.log("login res data..", res.data)
       login(res.data.username, res.data.id);
       }
       navigate(state?.path || "/olduser")
-      console.log(state)
+      // console.log(state)
     });
   }
 

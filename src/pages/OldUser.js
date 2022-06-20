@@ -20,7 +20,7 @@ function OldUser() {
       })
       .then((res) => {
         setListOfSleeps(res.data);
-        console.log("the list of old sleeps", res.data);
+        // console.log("the list of old sleeps", res.data);
       });
     //empty array means refresh immediately page loads without depending on any change of value
   }, []);
@@ -49,7 +49,7 @@ function OldUser() {
     const hm = time.split(/[:]/);
     const h = parseInt(hm[0]);
     const m = parseInt(hm[1]);
-    console.log("this..." + hm, h, m);
+    // console.log("this..." + hm, h, m);
     const num = h + m / 60;
     return Math.round((num + Number.EPSILON) * 100) / 100;
   };
@@ -137,12 +137,6 @@ function OldUser() {
         </tr>
         
       {listOfSleeps.map(({ sleeptime, date, id, wakeuptime, sleepduration }, index) => {
-        console.log("this is sleeptitme 1..", sleeptime);
-        console.log("this is sleeptitme 2 new date..", new Date(sleeptime));
-        console.log(
-          "this is sleeptitme 3 to locale..",
-          new Date(sleeptime).toLocaleTimeString()
-        );
         return (
 
         
@@ -190,7 +184,7 @@ function OldUser() {
 
 
       <div className="barchart">
-        {console.log("initial Chart Data ,", initialChartData)}
+        {/* {console.log("initial Chart Data ,", initialChartData)} */}
         <BarChart chartData={initialChartData} />
       </div>
     </div>

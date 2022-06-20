@@ -15,18 +15,18 @@ function Sleep() {
   useEffect(() => {
     axios.get(`https://sleeptrack-full-stack-api.herokuapp.com/sleeps/byId/${id}`).then((res) => {
       setSleepObject(res.data);
-      console.log("res data..", res.data)
+      // console.log("res data..", res.data)
     });
   }, [id]);
 
   const processForm = (data) => {
     const { waketime } = data;
-    console.log(waketime);
+    // console.log(waketime);
     const body = {
       wakeuptime: dayjs(waketime).format("YYYY-MM-DD HH:mm:ss"),
     };
 
-    console.log("body...", body);
+    // console.log("body...", body);
 
     axios.patch(`https://sleeptrack-full-stack-api.herokuapp.com/sleeps/${id}`, body, {
         headers: {
@@ -34,8 +34,8 @@ function Sleep() {
         },
       })
       .then((res) => {
-        console.log("this is body" + JSON.stringify(body));
-        console.log(res.data);
+        // console.log("this is body" + JSON.stringify(body));
+        // console.log(res.data);
         navigate("/olduser");
       });
   };

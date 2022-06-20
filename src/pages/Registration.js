@@ -19,7 +19,7 @@ function Registration() {
 
     const onSubmit = (data) => {
         axios.post("https://sleeptrack-full-stack-api.herokuapp.com/auth", data).then(() => {
-            console.log(data);
+            // console.log(data);
             navigate("/")
         })
     }

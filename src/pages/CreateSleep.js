@@ -15,7 +15,7 @@ function CreateSleep() {
 
   const processForm = (data) => {
     const { date } = data;
-    console.log(date);
+    // console.log(date);
     const body = {
 
 
@@ -23,7 +23,7 @@ function CreateSleep() {
       sleeptime: dayjs(date).format("YYYY-MM-DD HH:mm:ss"),
     };
 
-    console.log("body...", body);
+    // console.log("body...", body);
 
     axios.post("https://sleeptrack-full-stack-api.herokuapp.com/sleeps", body, {
         headers: {
@@ -31,8 +31,8 @@ function CreateSleep() {
         },
       })
       .then((res) => {
-        console.log("this is body" + JSON.stringify(body));
-        console.log(res.data);
+        // console.log("this is body" + JSON.stringify(body));
+        // console.log(res.data);
         navigate("/olduser");
       });
   };
