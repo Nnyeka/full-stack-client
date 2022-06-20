@@ -157,7 +157,9 @@ function OldUser() {
               <td className="sleep-cell">{" "}
               {new Date(sleeptime).toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"})}{" "}</td>
               <td className="sleep-cell">{" "}
-              {new Date(wakeuptime).toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"})}{" "}</td>
+              {wakeuptime ? new Date(wakeuptime).toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"})
+                : "00:00"
+                }{" "}</td>
               <td className="sleep-cell">{sleepduration}HRS</td>
             </tr>
           /* <div className="sleeps">

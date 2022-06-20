@@ -50,8 +50,10 @@ function Sleep() {
     <div className="sleepPage">
       <div className="leftSide">
         <div className="date"> {sleepObject.date} </div>
-        <div className="sleeptime">Sleeptime: {new Date(sleepObject.sleeptime).toLocaleTimeString()} </div>
-        <div className="username">Wake up: {new Date(sleepObject.wakeuptime).toLocaleTimeString()} </div>
+        <div className="sleeptime">Sleeptime: {new Date(sleepObject.sleeptime).toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"})} </div>
+        <div className="username">Wake up: {sleepObject.wakeuptime ? new Date(sleepObject.wakeuptime).toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"})
+                : "00:00"
+                } </div>
 
         {/* <button className="wakeup" onClick={() => wakeUp()}>
           wakeuptime

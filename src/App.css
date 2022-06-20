@@ -344,6 +344,11 @@ td, th {
   padding: 2px 5px;
   color: #333333;
   font-weight: 500;
+  cursor: pointer;
+}
+
+td:hover {
+  color: var(--lightblue);
 }
 
 
