@@ -13,7 +13,7 @@ function Sleep() {
   const { register, handleSubmit, formState: {errors} } = useForm();
 
   useEffect(() => {
-    axios.get(`https://sleeptrack-full-stack-api.herokuapp.com//sleeps/byId/${id}`).then((res) => {
+    axios.get(`https://sleeptrack-full-stack-api.herokuapp.com/sleeps/byId/${id}`).then((res) => {
       setSleepObject(res.data);
       console.log("res data..", res.data)
     });
