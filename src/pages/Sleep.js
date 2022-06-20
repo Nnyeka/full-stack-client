@@ -15,6 +15,7 @@ function Sleep() {
   useEffect(() => {
     axios.get(`https://sleeptrack-full-stack-api.herokuapp.com//sleeps/byId/${id}`).then((res) => {
       setSleepObject(res.data);
+      console.log("res data..", res.data)
     });
   }, [id]);
 
