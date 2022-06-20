@@ -405,7 +405,6 @@ td:hover {
 
   .profilepage {
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: row-reverse;
     grid-gap: 60px;
