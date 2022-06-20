@@ -25,7 +25,7 @@ function CreateSleep() {
 
     console.log("body...", body);
 
-    axios.post("http://localhost:3001/sleeps", body, {
+    axios.post("https://sleeptrack-full-stack-api.herokuapp.com/sleeps", body, {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

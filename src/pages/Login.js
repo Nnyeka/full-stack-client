@@ -21,7 +21,7 @@ function Login() {
 
   const onSubmit = data => {
     
-    axios.post("http://localhost:3001/auth/login", data).then((res) => {
+    axios.post("https://sleeptrack-full-stack-api.herokuapp.com/auth/login", data).then((res) => {
       if (res.data.error) {
         alert(res.error);
       } else {

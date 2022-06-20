@@ -13,7 +13,7 @@ function OldUser() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/sleeps", {
+      .get("https://sleeptrack-full-stack-api.herokuapp.com/sleeps", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

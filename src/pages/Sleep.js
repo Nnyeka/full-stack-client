@@ -13,7 +13,7 @@ function Sleep() {
   const { register, handleSubmit, formState: {errors} } = useForm();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/sleeps/byId/${id}`).then((res) => {
+    axios.get(`https://sleeptrack-full-stack-api.herokuapp.com//sleeps/byId/${id}`).then((res) => {
       setSleepObject(res.data);
     });
   }, [id]);
@@ -27,7 +27,7 @@ function Sleep() {
 
     console.log("body...", body);
 
-    axios.patch(`http://localhost:3001/sleeps/${id}`, body, {
+    axios.patch(`https://sleeptrack-full-stack-api.herokuapp.com/sleeps/${id}`, body, {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
